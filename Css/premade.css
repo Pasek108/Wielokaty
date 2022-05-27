@@ -1,0 +1,137 @@
+.premade {
+  background-color: whitesmoke;
+  top: 0;
+  left: 100vw;
+}
+
+.premade .search {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 80%;
+  padding: 0.5rem 0.75rem;
+  margin-left: 15%;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.premade .polygon-browser {
+  width: 90vw;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: 20fr 80fr;
+  column-gap: 1rem;
+}
+
+/* ------------------------ types of polygons ------------------------ */
+.premade .polygon-types {
+  padding: 0.5rem;
+  border: 1px solid black;
+  height: 85vh;
+  background-color: white;
+  border-radius: 0.2rem;
+  overflow-y: scroll;
+}
+
+.premade .group:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.premade .group > .name {
+  padding: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.premade .group > .name:hover {
+  text-decoration: underline;
+}
+
+.premade i {
+  margin-right: 0.2rem;
+}
+
+.premade .polygons {
+  font-size: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  transition: opacity 0.25s, font-size 0.25s 0.25s, margin 0.25s 0.25s, padding 0.25s 0.25s;
+}
+
+.premade .polygons:not(.active) .name {
+  margin: 0;
+  padding: 0;
+  transition: margin 0.25s 0.25s, padding 0.25s 0.25s;
+}
+
+.premade .polygons.active {
+  padding: 0 0.5rem 0.75rem 0.75rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  opacity: 1;
+  transition: font-size 0.25s, margin 0.25s, padding 0.25s, opacity 0.25s 0.25s;
+}
+
+.premade .polygons .name {
+  padding: 0.1rem;
+  margin-bottom: 0.1rem;
+  cursor: pointer;
+}
+
+.premade .polygons .name:last-child {
+  margin-bottom: 0;
+}
+
+.premade .polygons .name:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------ polygon details ------------------------ */
+.premade .polygon-details {
+  border: 1px solid black;
+  height: 85vh;
+  background-color: white;
+  border-radius: 0.2rem;
+}
+
+.premade canvas {
+  background-color: white;
+  border: 1px solid black;
+  width: 15rem;
+  height: 15rem;
+}
+
+.premade .methods {
+  display: grid;
+  grid-template-columns: 25fr 25fr 25fr 25fr;
+  border-bottom: 1px solid black;
+  position: relative;
+    top: -.1px;
+}
+
+.premade .methods div {
+  border-right: 1px solid black;
+  padding: 0.6rem;
+  margin-bottom: -1px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.premade .methods div:nth-child(4) {
+  border-right: none;
+}
+
+.premade .methods .active {
+  background-color: var(--darker-blue);
+  color: white;
+  font-weight: bold;
+}
+
+.premade .method-details {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  height: calc(100% - 4.25rem);
+  overflow-y: scroll;
+}

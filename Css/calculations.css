@@ -1,0 +1,50 @@
+.calculations {
+  top: 100vh;
+  left: -100vw;
+  transform: rotate(-30deg);
+  background-color: whitesmoke;
+  padding: 1rem 5rem 1rem 2rem;
+}
+
+.calculations nav {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 80%;
+  padding: 0 0.5rem;
+  border-bottom: 1px solid black;
+  margin-left: 15%;
+  font-size: 0.9rem;
+}
+
+.calculations nav .option {
+  display: inline-block;
+  width: calc(50% - 2px);
+  padding: 1rem 1.5rem;
+  border-left: 1px solid black;
+  margin: 0 0 -0.5px -0.2rem;
+  text-align: center;
+  font-weight: bold;
+  transition: color 0.1s, background-color 0.1s;
+  cursor: pointer;
+}
+
+.calculations nav .option:first-child {
+  border-right: 1px solid black;
+  border-left: none;
+  margin: 0 -0.1rem -0.5px 0.2rem;
+}
+
+.calculations nav .active {
+  pointer-events: none;
+  background-color: var(--darker-blue);
+  color: white;
+}
+
+.calculations .option-active {
+  display: none;
+}
+
+.calculations .option-active.active {
+  display: block;
+}

@@ -1,0 +1,65 @@
+.menu {
+  border: none;
+  top: 0;
+  left: 0;
+  transform: rotate(0deg);
+}
+
+.menu > .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #0000000a;
+  width: 100vw;
+  aspect-ratio: 4 / 3;
+}
+
+.menu > .navigation {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.menu > .navigation > .title {
+  font-weight: bold;
+  font-size: 2.8rem;
+  margin-top: -8rem;
+}
+
+.menu > .navigation > .options {
+  margin-top: 3.5rem;
+}
+
+.menu > .navigation > .options > .option {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 0.8rem 2rem;
+  width: 26rem;
+  margin: 0.75rem auto 0.75rem auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.1s, background-color 0.1s;
+  cursor: pointer;
+  background-color: white;
+}
+
+.menu > .navigation > .options > .option:hover {
+  color: white;
+  background-color: #008cff;
+}
+
+.menu > footer {
+  width: 100%;
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,76 @@
+.vertices {
+  background-color: whitesmoke;
+  top: 0;
+  left: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertices .wrapper {
+  width: 80vw;
+  height: 70vh;
+  margin-top: 8vh;
+}
+
+.vertices .wrapper h2 {
+  margin-top: 0;
+}
+
+.vertices .coordinates {
+  height: 90%;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.vertices .coordinates .point {
+  width: 12rem;
+  padding: 0.5rem;
+  border-right: 1px solid black;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertices .coordinates .point label {
+  width: 2rem;
+  text-align: center;
+}
+
+.vertices .coordinates .point input {
+  width: 4rem;
+}
+
+.vertices .add-point {
+  border: none;
+  background-color: unset;
+  color: var(--green);
+  padding: 0.5rem;
+  width: 12rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.vertices .draw-polygon {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 0.8rem 2rem;
+  width: 26rem;
+  margin: 0.75rem auto 0.75rem auto;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.1s, background-color 0.1s;
+}
+
+.vertices .draw-polygon:hover {
+  color: white;
+  background-color: var(--blue);
+}

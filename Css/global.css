@@ -1,0 +1,81 @@
+* {
+  font-family: "Roboto", "sans serif";
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  max-height: 100vh;
+
+  --blue: #008cff;
+  --darker-blue: #0077ff;
+  --vertice-hover-green: #5cce1a;
+  --green: #09a716;
+  --orange: #ff8800;
+  --yellow: #ffe600;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 3rem;
+}
+
+.scroll {
+  scrollbar-color: darkgrey;
+  scrollbar-width: thin;
+  -ms-overflow-style: initial;
+  overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+  display: initial;
+  width: 0.5rem;
+}
+
+.no-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: hidden;
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.window {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  border: 1px solid black;
+  transition: top 1s, left 1s, transform 1s;
+}
+
+.window.active {
+  top: 0;
+  left: 0;
+  transform: rotate(0deg);
+}
+
+.window .back {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 1.3rem;
+  padding: 1rem;
+  transition: color 0.1s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.window .back i {
+  margin-right: 0.5rem;
+}
+
+.window .back:hover {
+  color: var(--darker-blue);
+}

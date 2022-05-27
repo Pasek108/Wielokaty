@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wielokaty</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" />
+
+    <link rel="stylesheet" href="Css/global.css" />
+    <link rel="stylesheet" href="Css/menu.css" />
+    <link rel="stylesheet" href="Css/start.css" />
+    <link rel="stylesheet" href="Css/calculations.css" />
+    <link rel="stylesheet" href="Css/premade.css" />
+    <link rel="stylesheet" href="Css/edges.css" />
+    <link rel="stylesheet" href="Css/vertices.css" />
+    <link rel="stylesheet" href="Css/board.css" />
+    <link rel="stylesheet" href="Css/interface.css" />
+  </head>
+
+  <body class="no-scroll">
+    <div class="window menu">
+      <canvas class="background" width="1200" height="900"></canvas>
+
+      <div class="navigation">
+        <div class="title">Kalkulator wielokątów</div>
+        <nav class="options">
+          <div class="option">Rozpocznij</div>
+          <div class="option">Informacje i kontakt</div>
+        </nav>
+      </div>
+
+      <footer>Artur Pas 2021</footer>
+    </div>
+
+    <div class="window start">
+      <div class="back"><i class="fas fa-arrow-left"></i> Wróć</div>
+
+      <h1>Od czego chcesz zacząć?</h1>
+      <div class="options">
+        <div class="option">Jednej z gotowych figur</div>
+        <div class="option">Długości boków i kątów między nimi</div>
+        <div class="option">Współrzędnych wierzchołków</div>
+        <div class="option">Pustej tablicy</div>
+      </div>
+    </div>
+
+    <div class="window calculations">
+      <div class="back"><i class="fas fa-arrow-left"></i> Wróć</div>
+
+      <nav>
+        <span class="option active">Obliczenia</span>
+        <span class="option">Przykłady</span>
+      </nav>
+
+      <div class="option-window active">
+        <div class="contents"></div>
+        <div class="content"></div>
+      </div>
+
+      <div class="option-window">
+        <div class="contents"></div>
+        <div class="content"></div>
+      </div>
+    </div>
+
+    <div class="window premade">
+      <div class="back"><i class="fas fa-arrow-left"></i> Wróć</div>
+
+      <input type="text" class="search" placeholder="Szukaj..." />
+      <div class="polygon-browser">
+        <div class="polygon-types scroll"></div>
+
+        <div class="polygon-details">
+          <div class="methods">
+            <div class="active">a</div>
+            <div>b</div>
+          </div>
+          <div class="method-details scroll">
+            <div>b</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="window edges">
+      <div class="back"><i class="fas fa-arrow-left"></i> Wróć</div>
+
+      <div class="wrapper">
+        <h2>Podaj długości boków i kąty</h2>
+
+        <div class="coordinates">
+          <div class="point"><label>x:</label><input class="x" type="number" /> <label>y:</label><input class="y" type="number" /></div>
+          <div class="point"><label>x:</label><input class="x" type="number" /> <label>y:</label><input class="y" type="number" /></div>
+          <div class="point"><label>x:</label><input class="x" type="number" /> <label>y:</label><input class="y" type="number" /></div>
+          <button class="add-point"><i class="fa-solid fa-plus"></i> Dodaj wierzchołek</button>
+        </div>
+      </div>
+
+      <button class="draw-polygon">Rysuj wielokąt</button>
+    </div>
+
+    <div class="window vertices">
+      <div class="back"><i class="fas fa-arrow-left"></i> Wróć</div>
+
+      <div class="wrapper">
+        <h2>Podaj współrzędne wierzchołków</h2>
+
+        <div class="coordinates">
+          <div class="point"><label>x:</label><input class="x" type="number" /> <label>y:</label><input class="y" type="number" /></div>
+          <div class="point"><label>x:</label><input class="x" type="number" /> <label>y:</label><input class="y" type="number" /></div>
+          <div class="point"><label>x:</label><input class="x" type="number" /> <label>y:</label><input class="y" type="number" /></div>
+          <button class="add-point"><i class="fa-solid fa-plus"></i> Dodaj wierzchołek</button>
+        </div>
+      </div>
+
+      <button class="draw-polygon">Rysuj wielokąt</button>
+    </div>
+
+    <div class="window board">
+      <div class="back"><i class="fas fa-arrow-left"></i> Wróć</div>
+
+      <!-- grid -->
+      <svg class="grid" width="100vw" height="100vh" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="smallUnit" width="12" height="12" patternUnits="userSpaceOnUse">
+            <path d="M 12 0 L 0 0 0 12" fill="none" stroke="gray" stroke-width="0.5" />
+          </pattern>
+
+          <pattern id="bigUnit" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+            <rect width="120" height="120" fill="url(#smallUnit)" />
+            <path d="M 120 0 L 0 0 0 120" fill="none" stroke="gray" stroke-width="1" />
+          </pattern>
+        </defs>
+
+        <rect width="100vw" height="100vh" fill="url(#bigUnit)" />
+      </svg>
+
+      <!-- x axis -->
+      <svg class="scale-axis-x" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="verticalUnit" width="12" height="100%" patternUnits="userSpaceOnUse">
+            <path d="M 0 3 V 20" fill="none" stroke="black" stroke-width="0.5" />
+          </pattern>
+
+          <pattern id="bigVerticalUnit" x="0" y="0" width="120" height="100%" patternUnits="userSpaceOnUse">
+            <rect width="120" height="100%" fill="url(#verticalUnit)" />
+            <path d="M 0 0 V 120" fill="none" stroke="black" stroke-width="1" />
+          </pattern>
+        </defs>
+
+        <rect width="100%" height="100%" fill="url(#bigVerticalUnit)" />
+      </svg>
+
+      <!-- y axis -->
+      <svg class="scale-axis-y" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="horizontalUnit" width="100%" height="12" patternUnits="userSpaceOnUse">
+            <path d="M 3 0 H 20" fill="none" stroke="black" stroke-width="0.5" />
+          </pattern>
+
+          <pattern id="bigHorizontalUnit" x="0" y="0" width="100%" height="120" patternUnits="userSpaceOnUse">
+            <rect width="100%" height="120" fill="url(#horizontalUnit)" />
+            <path d="M 0 0 H 120" fill="none" stroke="black" stroke-width="1" />
+          </pattern>
+        </defs>
+
+        <rect width="100%" height="100%" fill="url(#bigHorizontalUnit)" />
+      </svg>
+
+      <!-- canvas -->
+      <canvas class="drawing-board" width="1800" height="1350"></canvas>
+
+      <!-- interface -->
+      <div class="interface">
+        <div class="buttons">
+          <button class="save-button" title="Zapisz"><i class="fas fa-save"></i></button>
+          <button class="calculate-button"><i class="fas fa-calculator"></i> Oblicz</button>
+          <button class="restore_button" title="Cofnij"><i class="fas fa-undo"></i></button>
+          <button class="delete-button" title="Reset"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="polygon-info">
+          <div class="open-info-button">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+
+          <h2>Informacje o wielokącie</h2>
+          <div class="polygon-menu">
+            <div class="tab active">Wierzchołki</div>
+            <div class="tab">Wyniki</div>
+          </div>
+
+          <div class="vertices scroll active"></div>
+
+          <div class="results scroll">
+            <div class="area">
+              <label>Pole:</label>
+              <div id="area">0</div>
+            </div>
+
+            <div class="perimeter">
+              <label>Obwód:</label>
+              <div id="perimeter">0</div>
+            </div>
+
+            <div class="sum-of-angles">
+              <label>Suma kątów:</label>
+              <div id="sum-of-angles">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Js/premade.js"></script>
+    <script src="Js/edges.js"></script>
+    <script src="Js/vertices.js"></script>
+    <script src="Js/interface.js"></script>
+    <script src="Js/board.js"></script>
+    <script src="Js/axes.js"></script>
+    <script src="Js/start.js"></script>
+    <script src="Js/calculations.js"></script>
+    <script src="Js/global.js"></script>
+    <script src="Js/menu_bg_canvas.js"></script>
+  </body>
+</html>
