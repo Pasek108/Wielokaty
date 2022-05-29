@@ -1,5 +1,5 @@
 # Wielokaty
-Aplikacja do rysowania i obliczania pól dowolnych wielokątów
+Aplikacja do rysowania i obliczania pól dowolnych wielokątów. Wielokąty rysuje się na nieograniczonej tablicy dodając i usuwając wierzchołki za pomocą prawego przysisku myszy.
  <details>
     <summary><b>Screeny</b></summary>
     <img alt="Menu" src="https://github.com/Pasek108/Wielokaty/blob/main/readme_images/menu.png">
@@ -11,7 +11,7 @@ Aplikacja do rysowania i obliczania pól dowolnych wielokątów
 ## Funkcje
 * Menu
 * Animacja menu
-* Tablica o nieograniczonej wielkości z osiami
+* Przeswijalna tablica o nieograniczonej wielkości z osiami
 * Rysowanie wielokątów na tablicy
 * Połączenie wierzchołków z przybocznym menu
 * Tworzenie wielokątów z wierzchołków
